@@ -2,12 +2,6 @@
   "name": "skill-finder",
   "version": "0.0.0",
   "description": "SkillFinder app",
-  "scripts": {
-    "tsc": "tsc",
-    "tsc:w": "tsc -w",
-    "lite": "lite-server",
-    "start": "concurrent \"npm run tsc:w\" \"npm run lite\" "
-  },
   "dependencies": {
     "angular2": "2.0.0-beta.7",
     "systemjs": "0.19.22",
@@ -18,8 +12,10 @@
     "zone.js": "0.5.15"
   },
   "devDependencies": {
-    "concurrently": "^2.0.0",
-    "lite-server": "^2.1.0",
-    "typescript": "^1.7.5"
+    "browser-sync": "^2.10.0",
+    "gulp": "^3.9.0",
+    "gulp-typescript": "^2.8.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "del": "^2.1.0"
   }
 }
