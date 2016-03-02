@@ -18,6 +18,18 @@ gulp.task('clean:compiled', function() {
   return del('dist/app');
 });
 
+gulp.task('clean:css', function() {
+  return del('dist/css');
+})
+
+gulp.task('clean:js', function() {
+  return del('dist/js');
+})
+
+gulp.task('clean:fonts', function() {
+  return del('dist/fonts');
+})
+
 gulp.task('compile', ['clean:compiled'], function(){
     gulp.src(['app/**/*.ts'])
         .pipe(sourcemaps.init())
@@ -43,7 +55,22 @@ gulp.task('copy:assets', ['clean:assets'], function() {
         .pipe(gulp.dest('dist'))
 });
 
-gulp.task('copy', ['copy:assets', 'copy:libs']);
+gulp.task('copy:css', ['clean:css'], function() {
+    return gulp.src(['css/*'], { base: './'})
+        .pipe(gulp.dest('dist'));
+})
+
+gulp.task('copy:js', ['clean:js'], function() {
+    return gulp.src(['js/*'], { base: './'})
+        .pipe(gulp.dest('dist'));
+})
+
+gulp.task('copy:fonts', ['clean:fonts'], function() {
+    return gulp.src(['fonts/*'], { base: './'})
+        .pipe(gulp.dest('dist'));
+})
+
+gulp.task('copy', ['copy:assets', 'copy:libs', 'copy:css', 'copy:js', 'copy:fonts']);
 
 gulp.task('serve', ['compile', 'copy'], function() {
     browserSync({
