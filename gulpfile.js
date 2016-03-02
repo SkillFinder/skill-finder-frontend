@@ -52,9 +52,8 @@ gulp.task('serve', ['compile', 'copy'], function() {
         }
     });
 
-    gulp.watch(assets, ['copy:assets', browserSync.reload]);
+    gulp.watch(['*.html'], ['copy:assets', browserSync.reload]);
     gulp.watch('app/**/*', ['compile', browserSync.reload]);
 });
 
 gulp.task('default', ['serve']);
-
