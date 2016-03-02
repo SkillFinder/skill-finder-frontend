@@ -10,8 +10,12 @@ gulp.task('clean:libs', function () {
     return del('dist/lib');
 });
 
-gulp.task('clean:assets', function() {
-    return del('dist/**/*.html');
+gulp.task('clean:html', function() {
+    return del('dist/views/*.html');
+});
+
+gulp.task('clean:index', function() {
+    return del('dist/index.html');
 });
 
 gulp.task('clean:compiled', function() {
@@ -20,15 +24,15 @@ gulp.task('clean:compiled', function() {
 
 gulp.task('clean:css', function() {
   return del('dist/css');
-})
+});
 
 gulp.task('clean:js', function() {
   return del('dist/js');
-})
+});
 
 gulp.task('clean:fonts', function() {
   return del('dist/fonts');
-})
+});
 
 gulp.task('compile', ['clean:compiled'], function(){
     gulp.src(['app/**/*.ts'])
@@ -50,27 +54,32 @@ gulp.task('copy:libs', ['clean:libs'], function() {
         .pipe(gulp.dest('dist/lib'))
 });
 
-gulp.task('copy:assets', ['clean:assets'], function() {
-    return gulp.src(['index.html'], { base : './' })
+gulp.task('copy:html', ['clean:html'], function() {
+    return gulp.src(['views/*.html'], { base : './' })
         .pipe(gulp.dest('dist'))
 });
 
 gulp.task('copy:css', ['clean:css'], function() {
     return gulp.src(['css/*'], { base: './'})
         .pipe(gulp.dest('dist'));
-})
+});
 
 gulp.task('copy:js', ['clean:js'], function() {
     return gulp.src(['js/*'], { base: './'})
         .pipe(gulp.dest('dist'));
-})
+});
 
 gulp.task('copy:fonts', ['clean:fonts'], function() {
     return gulp.src(['fonts/*'], { base: './'})
         .pipe(gulp.dest('dist'));
-})
+});
 
-gulp.task('copy', ['copy:assets', 'copy:libs', 'copy:css', 'copy:js', 'copy:fonts']);
+gulp.task('copy:index',['clean:index'], function() {
+   return gulp.src(['index.html'], {base: './'})
+       .pipe(gulp.dest('dist'));
+});
+
+gulp.task('copy', ['copy:index','copy:html', 'copy:libs', 'copy:css', 'copy:js', 'copy:fonts']);
 
 gulp.task('serve', ['compile', 'copy'], function() {
     browserSync({
@@ -79,7 +88,8 @@ gulp.task('serve', ['compile', 'copy'], function() {
         }
     });
 
-    gulp.watch(['*.html'], ['copy:assets', browserSync.reload]);
+    gulp.watch(['index.html'], ['copy:index', browserSync.reload]);
+    gulp.watch(['views/*.html'], ['copy:html', browserSync.reload]);
     gulp.watch('app/**/*', ['compile', browserSync.reload]);
 });
 
