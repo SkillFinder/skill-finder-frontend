@@ -1,16 +1,18 @@
-.events-bar {
+#events {
     height: 500px;
     border: 2px solid black;
     margin: 5px;
 }
-.commercial-bar {
+#commercials {
     margin: 5px;
     height: 500px;
     border: 2px solid black;
 }
-.profiles-bar {
+#profiles {
     margin: 5px;
     border: 2px solid black;
+    position: relative;
+    text-align: center;
 }
 .profile {
     height: 150px;
@@ -19,7 +21,7 @@
     margin: 5px;
     display: inline-block;
 }
-#profiles-list {
-    position: relative;
-    text-align: center;
-}
+/*#profiles-list {*/
+    /*position: relative;*/
+    /*text-align: center;*/
+/*}*/

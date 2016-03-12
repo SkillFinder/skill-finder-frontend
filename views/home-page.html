@@ -4,19 +4,16 @@
 
         </div>
         <div class="row">
-                <div class="events-bar col-lg-2 col-md-2 col-sm-3 hidden-xs">
+                <div id="events" class="col-lg-2 col-md-2 col-sm-3 hidden-xs">
                     <h1>Events</h1>
                 </div>
-                <div class="container profiles-bar col-lg-7 col-md-7 col-sm-8 col-ms-11 col-xs-11">
+                <div id="profiles" class="container col-lg-7 col-md-7 col-sm-8 col-ms-11 col-xs-11">
                     <h1>Profiles</h1>
-                    <div id="profiles-list">
                         <div *ngFor="#profile of profiles" class="profile">
                             {{profile}}
                         </div>
-
-                    </div>
                 </div>
-                <div class="commercial-bar col-lg-2 col-md-2 hidden-sm hidden-xs">
+                <div id="commercials" class="col-lg-2 col-md-2 hidden-sm hidden-xs">
                     <h1>Banners</h1>
                 </div>
 
