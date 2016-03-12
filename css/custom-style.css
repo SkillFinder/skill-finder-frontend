@@ -1,0 +1,25 @@
+.events-bar {
+    height: 500px;
+    border: 2px solid black;
+    margin: 5px;
+}
+.commercial-bar {
+    margin: 5px;
+    height: 500px;
+    border: 2px solid black;
+}
+.profiles-bar {
+    margin: 5px;
+    border: 2px solid black;
+}
+.profile {
+    height: 150px;
+    width: 200px;
+    border: 2px solid black;
+    margin: 5px;
+    display: inline-block;
+}
+#profiles-list {
+    position: relative;
+    text-align: center;
+}
