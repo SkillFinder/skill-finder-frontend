@@ -4,7 +4,7 @@ import {HomePageComponent} from "./home-page";
 import {EventsComponent} from "./events";
 import {ContactUsComponent} from "./contact-us";
 import {ROUTER_DIRECTIVES} from "angular2/router";
-
+import {RegisterComponent} from "./register";
 
 @Component({
     selector: 'app',
@@ -14,7 +14,8 @@ import {ROUTER_DIRECTIVES} from "angular2/router";
 @RouteConfig([
     {path:'/', name:'HomePage', component: HomePageComponent, useAsDefault: true},
     {path:'/events', name:'Events', component: EventsComponent},
-    {path:'/contact-us', name:'ContactUs', component: ContactUsComponent}
+    {path:'/contact-us', name:'ContactUs', component: ContactUsComponent},
+    {path:'/register', name: 'Register', component: RegisterComponent}
 ])
 export class App {
 

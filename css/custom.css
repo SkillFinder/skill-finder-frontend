@@ -2626,3 +2626,15 @@ iframe{
     right: 10px;
     top: -10px;
 }
+
+/*SkillFinder custom styles*/
+.ng-valid {
+    border-left: 5px solid #42A948; /* green */
+    border-color: #42A948;
+}
+
+.ng-invalid {
+    border-left: 5px solid #a94442; /* red */
+    border-color: #a94442;
+}
+

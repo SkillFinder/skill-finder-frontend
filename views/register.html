@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-8 col-sm-offset-1 text-right">
+            <form class="form-horizontal" #f="ngForm" (ngSubmit)="onSubmit(f.value)" [ngFormModel]="registerForm">
+                <div class="form-group form-group-lg row has-feedback" [class.has-success]="registerForm.controls['name'].valid">
+                    <label for="name" class="col-sm-5 control-label hidden-xs">Name:</label>
+                    <div class="col-sm-7 col-sm-offset-0 col-xs-8 col-xs-offset-2 text-center">
+                        <input type="text" class="form-control" #name="ngForm" id="name" placeholder="Name" [ngFormControl]="registerForm.controls['name']">
+                        <span class="glyphicon form-control-feedback"
+                              [class.glyphicon-ok]="name.valid" [class.glyphicon-remove]="!name.valid"></span>
+                    </div>
+                </div>
+                <div class="form-group form-group-lg row has-feedback" [class.has-success]="registerForm.controls['email'].valid">
+                    <label for="email" class="col-sm-5 control-label hidden-xs">Email:</label>
+                    <div class="col-sm-7 col-sm-offset-0 col-xs-8 col-xs-offset-2 text-center">
+                        <input type="email" class="form-control" #email="ngForm" id="email" placeholder="Email" [ngFormControl]="registerForm.controls['email']">
+                        <span class="glyphicon form-control-feedback"
+                              [class.glyphicon-ok]="email.valid" [class.glyphicon-remove]="!email.valid"></span>
+                    </div>
+                </div>
+                <div class="form-group form-group-lg row has-feedback" [class.has-success]="registerForm.controls['password'].valid">
+                    <label for="email" class="col-sm-5 control-label hidden-xs">Password:</label>
+                    <div class="col-sm-7 col-sm-offset-0 col-xs-8 col-xs-offset-2 text-center">
+                        <input type="password" class="form-control" #password="ngForm" id="password" placeholder="Password" [ngFormControl]="registerForm.controls['password']">
+                        <span class="glyphicon form-control-feedback"
+                              [class.glyphicon-ok]="password.valid" [class.glyphicon-remove]="!password.valid"></span>
+                    </div>
+                </div>
+                <div class="form-group form-group-lg row has-feedback" [class.has-success]="registerForm.controls['confirmPassword'].valid">
+                    <label for="email" class="col-sm-5 control-label hidden-xs">Confirm password:</label>
+                    <div class="col-sm-7 col-sm-offset-0 col-xs-8 col-xs-offset-2 text-center">
+                        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm password" [ngFormControl]="registerForm.controls['confirmPassword']" #confirmPassword="ngForm">
+                        <span class="glyphicon form-control-feedback"
+                              [class.glyphicon-ok]="!confirmPassword.mismatchedPasswords && confirmPassword.valid"
+                              [class.glyphicon-remove]="!confirmPassword.valid || confirmPassword.mismatchedPasswords"></span>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-main" [disabled]="!f.form.valid">Register!</button>
+            </form>
+        </div>
+    </div>
+    <ul>
+        <li *ngFor="#user of users">
+            {{user.id}}. {{user.firstname}} {{user.lastname}}
+        </li>
+    </ul>
+</div>

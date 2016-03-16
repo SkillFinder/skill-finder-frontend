@@ -49,7 +49,8 @@ gulp.task('copy:libs', ['clean:libs'], function() {
             'node_modules/rxjs/bundles/Rx.js',
             'node_modules/angular2/bundles/angular2.dev.js',
             'node_modules/angular2/bundles/router.dev.js',
-            'node_modules/es6-shim/es6-shim.js'
+            'node_modules/es6-shim/es6-shim.js',
+            'node_modules/angular2/bundles/http.js'
         ])
         .pipe(gulp.dest('dist/lib'))
 });
@@ -91,6 +92,7 @@ gulp.task('serve', ['compile', 'copy'], function() {
     gulp.watch(['index.html'], ['copy:index', browserSync.reload]);
     gulp.watch(['views/*.html'], ['copy:html', browserSync.reload]);
     gulp.watch('app/**/*', ['compile', browserSync.reload]);
+    gulp.watch('css/**/*', ['copy:css', browserSync.reload]);
 });
 
 gulp.task('default', ['serve']);
