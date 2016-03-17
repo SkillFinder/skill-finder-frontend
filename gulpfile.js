@@ -91,6 +91,7 @@ gulp.task('serve', ['compile', 'copy'], function() {
     gulp.watch(['index.html'], ['copy:index', browserSync.reload]);
     gulp.watch(['views/*.html'], ['copy:html', browserSync.reload]);
     gulp.watch('app/**/*', ['compile', browserSync.reload]);
+    gulp.watch('css/**/*', ['copy:css', browserSync.reload])
 });
 
 gulp.task('default', ['serve']);

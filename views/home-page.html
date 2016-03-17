@@ -1,50 +1,23 @@
 <section>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="feature_header text-center">
-                    <h3 class="feature_title">SkillFinder</h3>
-                    <!-- <h4 class="feature_sub"></h4> -->
-                    <div class="divider"></div>
-                </div>
-            </div>  <!-- Col-md-12 End -->
+    <div class="container-fluid">
+        <div class="row" style="margin-bottom:50px">
+
         </div>
         <div class="row">
-            <div class="main_feature text-center">
-                <div class="col-md-3 col-xs-12 col-sm-6">
-                    <div class="feature_content">
-                        <i class="fa fa-lightbulb-o"></i>
-                        <h5>Lightweight</h5>
-                        <p>You can not ignore mobile devices anymore and with this theme all your visitors will be very pleased how they see your website.</p>
-                        <button class="btn btn-main"> Read More</button>
-                    </div>
+                <div id="events" class="border col-lg-2 col-md-2 col-sm-4 hidden-xs">
+                    <h1>Events</h1>
                 </div>
-                <div class="col-md-3 col-xs-12 col-sm-6">
-                    <div class="feature_content">
-                        <i class="fa fa-pencil"></i>
-                        <h5>Beautiful Typrography</h5>
-                        <p>This theme integrates with WordPress in the most awesome way! Functionality is separated from style through uncreadble useful for user. </p>
-                        <button class="btn btn-main"> Read More</button>
-                    </div>
-                </div> <!-- Col-md-4 Single_feature End -->
-                <div class="col-md-3 col-xs-12 col-sm-6">
-                    <div class="feature_content">
-                        <i class="fa fa-cog"></i>
-                        <h5>Full time Support</h5>
-                        <p>Full Time support. Very much helpful and possesive at the same time. With all this in mind you won’t be outdated anytime soon. Really!! </p>
-                        <button class="btn btn-main"> Read More</button>
-                    </div>
-                </div> <!-- Col-md-4 Single_feature End -->
-                <div class="col-md-3 col-xs-12 col-sm-6">
-                    <div class="feature_content">
-                        <i class="fa fa-desktop"></i>
-                        <h5>Ultra Responsive</h5>
-                        <p>Shadow is as optimized as it gets. No useless wrappers, no double headings, everything is coded with SEO in mind. Content is KING! </p>
-                        <button class="btn btn-main"> Read More</button>
-                    </div>
-                </div> <!-- Col-md-4 Single_feature End -->
-                <!-- <button class="btn btn-main"> Read More</button> -->
-            </div>
-        </div>  <!-- Row End -->
-    </div>  <!-- Container End -->
+                <div id="profiles" class="border col-lg-8 col-md-8 col-sm-8 col-ms-12 col-xs-12">
+                    <h1>Profiles</h1>
+                        <div *ngFor="#profile of profiles" class="profile">
+                            {{profile}}
+                        </div>
+                </div>
+                <div id="commercials" class="border col-lg-2 col-md-2 hidden-sm hidden-xs">
+                    <h1>Banners</h1>
+                </div>
+
+        </div>
+
+    </div>
 </section>
